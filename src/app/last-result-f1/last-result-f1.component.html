@@ -1,0 +1,8 @@
+<h2>Último gran premio: {{raceName}}</h2>
+<div *ngFor="let result of results">
+    <h5>{{result.Driver.givenName}} {{result.Driver.familyName}}</h5>
+    <p>
+        Salida: {{ result.grid }} / Final: {{ result.position }}
+    </p>
+    <a href="{{result.Driver.url}}" target="_blank">Más información</a>
+</div>
