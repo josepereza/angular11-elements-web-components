@@ -20,9 +20,9 @@ Initiate the Project
 Here we go. We are going to create our first web component using Angular. For this first exercise, let’s create a card to describe people in our community. We call it “social card”.
 
 With your favorite terminal, create a new Angular project
-    ```
+```
 ng new social-card
-    ```
+```
 Create an Angular Component
 Add Angular material
 Because we want to use the Angular Material library to create our component, we need to add it as a dependency on our project. During the installation, I select the default values.
