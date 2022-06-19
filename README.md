@@ -164,6 +164,8 @@ Image description
 Congratulations! You’ve just created your first micro frontend using Angular.
 
 ### Resources
+  
+Web Tutorial : https://dev.to/entando/using-angular-to-create-a-micro-frontend-5fci  
 All the code is available at the repository: https://github.com/avdev4j/ng-social-card
 
 Find more micro frontends videos on our YouTube channel: https://www.youtube.com/c/EntandoVideos
