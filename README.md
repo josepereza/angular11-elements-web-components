@@ -93,11 +93,14 @@ Image description
 So far, so good, but the following application is not yet a Web Component and we need to make some changes to transform it.
 
 ## Transform the Application into a Web Component
-### Add Angular elements dependency
+### 1,- Add Angular elements dependency
 Angular elements is the name in the Angular ecosystem for custom elements. This dependency allows us to easily create a custom element from our existing application.
+  ```  
 ng add @angular/elements
+  ```
 Update the app.module.ts
 From the src/app/app.module.ts file, update the constructor, call the createCustomElement() method, and define the custom element tag, ng-social-card.
+```
 import {createCustomElement} from '@angular/elements';
 export class AppModule {
  constructor(private injector: Injector) {
@@ -108,13 +111,16 @@ export class AppModule {
  ngDoBootstrap() {
  }
 }
+```
 Remove the AppComponent in the bootstrap array. we don’t need it anymore and it could generate errors in the console log.
 
 Update the index.html
 Open the src/.html file and change the content to use the custom-element instead of the initial value. \
+```
 <body>
  <ng-social-card></ng-social-card>
 </body>
+ ```  
 We have now instantiated the application, using a custom element instead of the regular app-root tag.
 
 Start the application again using ng serve and check that the application is still working.
@@ -122,12 +128,15 @@ Start the application again using ng serve and check that the application is sti
 Build and Run Your Web Component
 Build it!
 To build your component you have to run the following command:
+```
 ng build
+```
 Image description
 
 A dist folder is now created containing an HTML file and all the Javascript and CSS files.
 
 If you open the index.html, you can see it contains the custom elements previously defined.
+```
 <head>
  <meta charset="utf-8">
  <title>NgSocialCard</title>
@@ -138,18 +147,23 @@ If you open the index.html, you can see it contains the custom elements previous
 <script src="polyfills.41cc36d27639541d.js" type="module"></script>
 <script src="main.8609c098aeba9ec8.js" type="module"></script>
 </body>
+```
 Run it!
 To run it, you can install serve through npm to start a lightweight web server.
+```
 npm install -g serve
+```  
 And from the dist/ng-social-card folder, run the following command:
+```  
 serve
+```  
 Image description
 
 Image description
 
 Congratulations! You’ve just created your first micro frontend using Angular.
 
-Resources
+### Resources
 All the code is available at the repository: https://github.com/avdev4j/ng-social-card
 
 Find more micro frontends videos on our YouTube channel: https://www.youtube.com/c/EntandoVideos
