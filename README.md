@@ -13,9 +13,9 @@ Modern Javascript frameworks offer some solutions to easily create a web compone
 Let’s see how to proceed using Angular and let’s see how to create our first micro frontend.
 
 To continue, you need to have installed NodeJS (including npm) and the Angular CLI
-  ```
+```
 npm install -g @angular/cli
-  ```
+```
 Initiate the Project
 Here we go. We are going to create our first web component using Angular. For this first exercise, let’s create a card to describe people in our community. We call it “social card”.
 
@@ -26,20 +26,20 @@ ng new social-card
 Create an Angular Component
 Add Angular material
 Because we want to use the Angular Material library to create our component, we need to add it as a dependency on our project. During the installation, I select the default values.
-    ```
+```
 ng add @angular/material
-    ```
+```
 Create the Material Card Component
 From the example section of the Card component, I choose to implement the “Card with multiple sections” one. https://material.angular.io/components/card/examples
 
 First, I create a new Angular component. Please note “components” here refer to the Angular Component, not Web Components defined in the introduction.
-    ```
+```
 ng generate component card
-    ```
+```
 The Angular CLI automatically creates all the needed files and updates the different files to make the application work out of the box.
 
 In the src/app/card/ folder, open the HTML file and copy the following code into it:
-    ```
+```
 <mat-card class="example-card">
    <mat-card-header>
      <div mat-card-avatar class="example-header-image"></div>
@@ -59,9 +59,9 @@ In the src/app/card/ folder, open the HTML file and copy the following code into
      <button mat-button>SHARE</button>
    </mat-card-actions>
  </mat-card>
-    ```
+```
 Then, open the CSS file and copy the following code:
-    ```
+```
 .example-card {
    max-width: 400px;
 }
@@ -69,31 +69,31 @@ Then, open the CSS file and copy the following code:
    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
    background-size: cover;
 }
-    ```
+```
 Import Angular Material Modules in your App Module
 Then, open the src/app/app.module.ts to import the MatCardModule and the MatButtonModule.
-    ```
+```
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 imports: [
  MatCardModule,
  MatButtonModule
-    ```
+```
 Run your application
 Edit the app.component.html file from the src/app folder and replace the existing with the following:
-    ```
+```
 <app-card></app-card>
-    ```
+```
 You can start your application by running the following command at the project root level:
-    ```
+```
 ng serve
-    ```
+```
 Image description
 
 So far, so good, but the following application is not yet a Web Component and we need to make some changes to transform it.
 
 ## Transform the Application into a Web Component
-Add Angular elements dependency
+### Add Angular elements dependency
 Angular elements is the name in the Angular ecosystem for custom elements. This dependency allows us to easily create a custom element from our existing application.
 ng add @angular/elements
 Update the app.module.ts
